@@ -1,20 +1,22 @@
 'use strict';
 
 class StringBuilder {
+  #newValue;
+
   constructor(initialValue) {
-    this.newValue = initialValue;
+    this.#newValue = initialValue;
   }
 
   getValue() {
-    return this.newValue;
+    return this.#newValue;
   }
 
   padStart(str) {
-    this.newValue = str + this.newValue;
+    this.#newValue = str + this.#newValue;
   }
 
   padEnd(str) {
-    this.newValue = this.newValue + str;
+    this.#newValue = this.#newValue + str;
   }
 
   padBoth(str) {
@@ -31,6 +33,5 @@ builder.padEnd("^");
 console.log(builder.getValue()); // "^.^"
 builder.padBoth("=");
 console.log(builder.getValue()); // "=^.^="
-
 
 console.log('---');
